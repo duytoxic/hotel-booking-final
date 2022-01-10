@@ -1,0 +1,14 @@
+a:hover{
+    text-decoration: none !important;
+}
+.nav-user li{
+    margin-left: 10px;
+}
+.login_from-wrapper{
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.login_from-wrapper form input{
+    color: black;
+}

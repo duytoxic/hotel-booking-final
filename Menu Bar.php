@@ -35,7 +35,7 @@ error_reporting(1);
               <li><a href="logout.php">Logout</a></li>
         	</ul>
         </li>
-        <?PHP } else
+        <?php } else
 		{
 		?>
 		<li><a href="Login.php"title="login"><span class="glyphicon glyphicon-log-in"></span>&nbsp;&nbsp;User Login</a>
