@@ -196,5 +196,5 @@ include('header.php');
 </div>
 </div>
 <?php
-include('footerMain.php')
+include('footer.php')
 ?>

@@ -56,5 +56,5 @@ include('navigation.php')
     </form>
   </div>
 <?php
-include('footerMain.php')
+include('footer.php')
 ?>

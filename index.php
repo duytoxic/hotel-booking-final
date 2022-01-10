@@ -49,5 +49,5 @@ include('navigation.php')
 </div>
 
 <?php
-include('footerMain.php')
+include('footer.php')
 ?>
