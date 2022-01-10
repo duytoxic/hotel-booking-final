@@ -1,3 +1,6 @@
+@import url(https://fonts.googleapis.com/css?family=Playfair+Display:400,700,700i);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400);
+
 a:hover {
   text-decoration: none !important;
 }
@@ -9,10 +12,33 @@ a:hover {
   margin: 0 auto;
 }
 
-.login_from-wrapper form input {
-  color: black;
+.login_from-wrapper form input:-webkit-autofill{
+  -webkit-text-fill-color:#000000 !important; 
 }
 
 .nav-user {
   align-items: center;
+}
+
+.form-label{
+  color: #000000;
+  font-size: 16px;
+  font-family: "Playfair Display", serif;
+}
+
+.btn-custom{
+  border: 1px solid #cca772 !important;
+  padding: 9px 30px;
+  background: #cca772;
+  color: #fff !important;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: "Playfair Display", serif;
+  text-transform: uppercase;
+}
+
+.btn-custom:hover {
+  background: transparent;
+  border-color: #cca772;
+  color: #cca772 !important;
 }

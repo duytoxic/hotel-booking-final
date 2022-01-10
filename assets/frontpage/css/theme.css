@@ -146,7 +146,6 @@ button {
   }
 }
 .header_area {
-  position: absolute;
   width: 100%;
   z-index: 999999;
   background: #fff;
@@ -1271,7 +1270,6 @@ button {
 .contact_form input {
   border-radius: 0;
   height: 40px;
-  padding-left: 18px;
   border-color: #eee;
 }
 .contact_form input:focus {

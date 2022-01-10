@@ -36,21 +36,22 @@ include('header.php')
 <?php
 include('navigation.php')
 ?>
-<div class="login_from-wrapper">
-    <h2 class="text-center">Đăng nhập</h2>
+<div class="login_from-wrapper mt-5">
+    <h3 class="text-center">Đăng nhập ngay</h3>
     <?php echo @$error; ?>
     <form class="row contact_form" method="post" id="contactForm" novalidate>
       <div class="col-12">
-        <div class="form-group">
-          <input type="Email" class="form-control" name="eid" placeholder="Email Id" autocomplete="off" required />
+        <div class="form-group mt-4">
+          <label class="form-label">Địa chỉ email</label>
+          <input type="Email" class="form-control" name="eid" placeholder="Email" autocomplete="off" required />
         </div>
-        <div class="form-group">
-          <input type="Password" class="form-control" name="pass" placeholder="Password" autocomplete="off" required />
+        <div class="form-group mt-4">
+        <label class="form-label">Mật khẩu</label>
+          <input type="Password" class="form-control" name="pass" placeholder="Mật khẩu" autocomplete="off" required />
         </div>
       </div>
-      <div class="col-md-12 text-center">
-        <input type="submit" value="Đăng nhập" name="login" class="button-contact btn-group-justified" required>
-    </input>
+      <div class="col-md-12 text-center mt-3">
+        <input type="submit" value="Đăng nhập" name="login" class="button btn-custom" required>
       </div>
     </form>
   </div>
