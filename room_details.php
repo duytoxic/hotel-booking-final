@@ -83,7 +83,7 @@ $res=mysqli_fetch_assoc($sql);
     <div class="row">
       <h2>Amenities & Facilities</h2>
       <img src="image/icon/wifi.png"class="img-responsive">
-      <a href="Login.php" class="btn btn-danger">Book Now</a><br><br>
+      <a href="login.php" class="btn btn-danger">Book Now</a><br><br>
       </div>
 	</div>
 				<div class="col-sm-3">

@@ -15,7 +15,7 @@ if(isset($save))
    if(mysqli_query($con,$sql))
    {
    $msg= "<h1 style='color:green'>Data Saved Successfully</h1>"; 
-   header('location:Login.php'); 
+   header('location:login.php'); 
    }
   }
 }

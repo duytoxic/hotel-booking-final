@@ -38,7 +38,7 @@ error_reporting(1);
         <?php } else
 		{
 		?>
-		<li><a href="Login.php"title="login"><span class="glyphicon glyphicon-log-in"></span>&nbsp;&nbsp;User Login</a>
+		<li><a href="login.php"title="login"><span class="glyphicon glyphicon-log-in"></span>&nbsp;&nbsp;User Login</a>
         </li>
 		<?php 
 		} ?>

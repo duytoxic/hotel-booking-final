@@ -29,51 +29,31 @@ if(isset($login))
   }
 }
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Online Hotel.Com</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-  <link href="css/style.css"rel="stylesheet"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Akronim|Libre+Baskerville" rel="stylesheet">
-</head>
-<body style="margin-top:50px;">
 <?php
-include('Menu Bar.php')
+include('header.php')
 ?>
-<div class="container-fluid"><!-- Primary Id-->
-  <div class="container">
-    <div class="row"><br>
-      <div class="col-sm-4"></div>
-        <div class="col-sm-4 text-center"style="box-shadow:2px 2px 2px;background-color:#f4ac41;"><br>
 
-        	<h1 align="center"><b><font style="font-family: 'Libre Baskerville', serif;text-shadow:3px 3px #000;">User Login ?</font></b></h1>
-          <img src="image/clipart/login-user-icon.png" class="img-circle" alt="Bird" width="130" height="120">
-          <?php echo @$error; ?>
-          <form method="post"><br>
-              <div class="form-group">
-                <input type="Email" class="form-control"name="eid"placeholder="Email Id" autocomplete="off"required >
-              </div>
-            <div class="form-group">
-                <input type="Password" class="form-control"name="pass"placeholder="Password" autocomplete="off"required>
-            </div>
-          <input type="submit" value="Login" name="login" class="btn btn-primary btn-group btn-group-justified"required>
-          <div class="form-group forget">
-                <a href="Forgot account.php">Forget Account</a>&nbsp; <b>|</b>&nbsp; 
-                <a href="Registation form.php">Create an Account</a>
-            </div>
-      	</form><br>
-        </div>
-    </div><br>
-  </div>
-</div>
 <?php
-include('Footer.php')
+include('navigation.php')
 ?>
-</body>
-</html>
+<div class="login_from-wrapper">
+    <h2 class="text-center">Đăng nhập</h2>
+    <?php echo @$error; ?>
+    <form class="row contact_form" method="post" id="contactForm" novalidate>
+      <div class="col-12">
+        <div class="form-group">
+          <input type="Email" class="form-control" name="eid" placeholder="Email Id" autocomplete="off" required />
+        </div>
+        <div class="form-group">
+          <input type="Password" class="form-control" name="pass" placeholder="Password" autocomplete="off" required />
+        </div>
+      </div>
+      <div class="col-md-12 text-center">
+        <input type="submit" value="Đăng nhập" name="login" class="button-contact btn-group-justified" required>
+    </input>
+      </div>
+    </form>
+  </div>
+<?php
+include('footerMain.php')
+?>
