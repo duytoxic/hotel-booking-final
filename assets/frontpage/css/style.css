@@ -3435,6 +3435,7 @@ input:required:invalid {
   transform: scale(1);
   transition: transform 0.8s cubic-bezier(0.2, 1, 0.8, 1);
   z-index: -10;
+  object-fit: cover !important;
 }
 .itemRoom:hover .cover {
   transform: scale(1.05);

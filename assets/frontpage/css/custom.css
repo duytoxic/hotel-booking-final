@@ -42,3 +42,34 @@ a:hover {
   border-color: #cca772;
   color: #cca772 !important;
 }
+
+.form--primary .form-group {
+  margin-bottom: 10px;
+}
+.form--primary input {
+  border-radius: 0;
+  height: 40px;
+  border-color: #eee;
+}
+.form--primary input:focus {
+  outline: 0;
+  box-shadow: none;
+}
+.form--primary input::placeholder {
+  font-size: 14px;
+  color: #999;
+}
+.form--primary textarea {
+  border-radius: 0;
+  padding-left: 18px;
+  border-color: #eee;
+}
+.form--primary textarea::placeholder {
+  font-size: 14px;
+  color: #999;
+}
+
+.itemRoom__link img{
+  width: 100% !important;
+  object-fit: cover !important;
+}

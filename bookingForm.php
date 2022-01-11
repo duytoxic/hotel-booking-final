@@ -7,20 +7,20 @@ if ($eid == "") {
 }
 $sql = mysqli_query($con, "select * from room_booking_details where email='$eid' ");
 $result = mysqli_fetch_assoc($sql);
-//print_r($result);
+
 extract($_REQUEST);
 error_reporting(1);
 if (isset($savedata)) {
   $sql = mysqli_query($con, "select * from room_booking_details where email='$email' and room_type='$room_type' ");
   if (mysqli_num_rows($sql)) {
-    $msg = "<h1 style='color:red'>You have already booked this room</h1>";
+    $msg = "<h1 style='color:red'>Phòng này đã được đặt</h1>";
   } else {
 
     $sql = "insert into room_booking_details(name,email,phone,address,city,state,zip,contry,room_type,Occupancy,check_in_date,check_in_time,check_out_date) 
   values('$name','$email','$phone','$address','$city','$state','$zip','$country',
   '$room_type','$Occupancy','$cdate','$ctime','$codate')";
     if (mysqli_query($con, $sql)) {
-      $msg = "<h1 style='color:blue'>You have Successfully booked this room</h1><h2><a href='order.php'>View </a></h2>";
+      $msg = "<h1 style='color:blue'>Bạn đã đặt phòng thành công</h1><h2><a href='order.php'>Xem chi tiết</a></h2>";
     }
   }
 }
@@ -30,11 +30,20 @@ if (isset($savedata)) {
 include('header.php');
 ?>
 
-<?php
-// include('navigation.php');
-?>
-<div class="text-center mt-5" id="primary">
+<div class="container mt-5" id="primary">
+
   <h1 class="text-center">Đặt phòng ngay</h1>
+  <form class="form--primary" method="post">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Tên: </label>
+          <input type="text" class="form-control" value="<?php echo $result['name']; ?>" name="name" placeholder="Họ và Tên" required>
+        </div>
+      </div>
+    </div>
+  </form>
+
   <div class="container">
     <div class="row">
       <?php echo @$msg; ?>
