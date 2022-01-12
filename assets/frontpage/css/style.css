@@ -441,7 +441,6 @@ input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
   transition: background-color 5000s ease-in-out 0s;
-  -webkit-text-fill-color: #fff !important;
 }
 
 input::-webkit-input-placeholder {
@@ -3480,6 +3479,8 @@ input:required:invalid {
   top: 0;
   right: 0;
   z-index: 3;
+  font-size: 13px;
+  padding: 2px 5px;
 }
 @media only screen and (max-width: 576px) {
   .itemRoom .badge {

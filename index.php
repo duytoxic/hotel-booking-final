@@ -25,11 +25,10 @@ include('navigation.php')
 <!-- Section Rooms -->
 <section class="container section">
   <div class="row align-items-end">
-    <div class="col-12 col-md-12 col-lg-8">
-      <span class="title title--overhead js-lines">Dách sách phòng</span>
-      <h1 class="title title--h1 js-lines">Rooms / Suites.</h1>
+    <div class="col-12 col-md-12 col-lg-8 flex-row align-items-center">
+      <h4 class="title title--overhead js-lines mb-4">Dách sách phòng</h4>
     </div>
-    <div class="col-12 col-md-12 col-lg-4 text-lg-right d-none d-md-block">
+    <div class="col-12 col-md-12 col-lg-4 text-lg-right d-md-block">
       <a class="btn-link header-btn-more" href="rooms.php">Xem tất cả</a>
     </div>
   </div>

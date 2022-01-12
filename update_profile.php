@@ -6,13 +6,13 @@ $eid=$_SESSION['create_account_logged_in'];
 ?>
 <?php 
 $i=1;
-$sql=mysqli_query($con,"select * from create_account where email='$eid'");
+$sql=mysqli_query($con,"select * from account where email='$eid'");
 $result=mysqli_fetch_assoc($sql);
 
 extract($_REQUEST);
 if(isset($update))
 {
-mysqli_query($con,"update create_account set name='$fname',email='$email',password='$Passw',mobile='$mobi',address='$addr',gender='$gend',country='$countr'where email='$eid'");
+mysqli_query($con,"update account set name='$fname',email='$email',password='$Passw',mobile='$mobi',address='$addr',gender='$gend',country='$countr'where email='$eid'");
 }
 ?>
 <!DOCTYPE html>
