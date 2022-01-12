@@ -9,17 +9,20 @@ require('connection.php');
 extract($_REQUEST);
 if (isset($login)) {
   if ($eid == "" || $pass == "") {
-    $error = `<div class="alert--message">
-            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-            Bạn cần nhập tài khoản và mật khẩu.
-          </div>`;
+    $error = '<div class="alert--message">
+    <i class="fal fa-times btn--close--message"></i>
+    Bạn cần nhập tài khoản và mật khẩu.
+  </div>';
   } else {
     $sql = mysqli_query($con, "select * from account where email='$eid' && password='$pass' ");
     if (mysqli_num_rows($sql)) {
       $_SESSION['create_account_logged_in'] = $eid;
       header('location:bookingForm.php');
     } else {
-      $error =  `<h4>vaf</h4>`;
+      $error =  '<div class="alert--message">
+      <i class="fal fa-times btn--close--message"></i>
+      Thông tin tài khoản, mật khẩu không chính xác.
+    </div>';
     }
   }
 }
@@ -58,6 +61,7 @@ include('navigation.php')
     </div>
   </form>
 </div>
+
 <?php
 include('footer.php')
 ?>

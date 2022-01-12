@@ -4,7 +4,10 @@ extract($_REQUEST);
 if (isset($save)) {
   $sql = mysqli_query($con, "select * from account where email='$email' ");
   if (mysqli_num_rows($sql)) {
-    $msg = "<h1 style='color:red'> account already exists</h1>";
+    $msg = '<div class="alert--message">
+    <i class="fal fa-times btn--close--message"></i>
+    tài khoản đã tồn tại.
+  </div>';
   } else {
 
     $sql = "insert into account values('','$name','$email','$pw','$phone','$address','$gender','$image')";
@@ -17,7 +20,7 @@ if (isset($save)) {
 include('header.php');
 include('navigation.php');
 ?>
-
+<?php echo @$error; ?>
 <div class="container">
   <h3 class="text--title text-center">
     Đăng ký

@@ -7,3 +7,9 @@ $(window).scroll(function () {
   //   $(".header_area").css("position", "static");
   // }
 });
+
+$(document).ready(() => {
+  $('.btn--close--message').click(function() {
+    $('.alert--message').css("display", "none");
+  })
+})

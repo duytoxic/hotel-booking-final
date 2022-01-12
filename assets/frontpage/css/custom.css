@@ -116,7 +116,7 @@ a:hover {
   color: white;
 }
 
-.closebtn {
+.btn--close--message {
   margin-left: 15px;
   color: white;
   font-weight: bold;
@@ -127,7 +127,7 @@ a:hover {
   transition: 0.3s;
 }
 
-.closebtn:hover {
+.btn--close--message:hover {
   color: black;
 }
 
