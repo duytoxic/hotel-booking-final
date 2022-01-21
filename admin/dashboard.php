@@ -8,140 +8,253 @@ if($admin=="")
 	header('location:index.php');
 }
 ?>
+
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-     <title>Bootstrap Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-  <link href="dashboard.css" rel="stylesheet">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-  <style>
-    /* Remove the navbar's default margin-bottom and rounded borders */ 
-    .navbar {
-      margin-bottom: 0;
-      border-radius: 0;
-    }
-  </style>
-  </head>
-  <body>
-<nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Welcome <?php echo $admin; ?></a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="dashboard.php?option=admin_profile">Profile</a></li>
-            <li><a href="logout.php">Logout</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+<html dir="ltr" lang="en">
 
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-sm-3 col-md-2 sidebar">
-          <ul class="nav nav-sidebar">
-            <li><a href="dashboard.php?option=update_password">Update Password</a></li>
-            <li><a href="dashboard.php?option=feedback">Feedback</a></li>
-            <li><a href="dashboard.php?option=rooms">Room</a></li>
-			<li><a href="dashboard.php?option=booking_details">Booking Details</a></li>
-      <li><a href="dashboard.php?option=user_registration">User Registration</a></li>
-			<li><a href="dashboard.php?option=slider">Slider</a></li>
-      <li><a href="#">Payment</a></li>
-			<li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Setting <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-              <li><a href="#">Logo Update</a></li>
-              <li><a href="#">Address Update</a></li>
-          </ul>
-      </li>
-          </ul>
-          </div>
-        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-<?php 
-@$opt=$_GET['option'];
-if($opt=="")
-{
-include('reports.php');	
-}
-else
-{
-	if($opt=="feedback")
-	{
-	include('feedback.php');	
-	}
-	else if($opt=="slider")
-	{
-	include('slider.php');	
-	}
-	else if($opt=="update_slider")
-	{
-	include('update_slider.php');	
-	}
-	else if($opt=="add_slider")
-	{
-	include('add_slider.php');	
-	}
-	else if($opt=="update_password")
-	{
-	include('update_password.php');	
-	}
-	else if($opt=="rooms")
-	{
-	include('rooms.php');	
-	}
-	
-	else if($opt=="add_rooms")
-	{
-	include('add_rooms.php');	
-	}
-	else if($opt=="delete_room")
-	{
-	include('delete_room.php');	
-	}
-  
-  else if($opt=="update_room")
-  {
-    include('update_room.php');
-  }
-  else if($opt=="booking_details")
-  {
-    include('booking_details.php');
-  }
-  else if($opt=="user_registration")
-  {
-    include('user_registration.php');
-  }
-  else if($opt=="admin_profile")
-  {
-    include('admin_profile.php');
-  }
-}
-?>
-          
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords"
+        content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, Ample lite admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, Ample admin lite dashboard bootstrap 5 dashboard template">
+    <meta name="description"
+        content="Ample Admin Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
+    <meta name="robots" content="noindex,nofollow">
+    <title>Admin</title>
+    <link rel="canonical" href="https://www.wrappixel.com/templates/ample-admin-lite/" />
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="plugins/images/favicon.png">
+    <!-- Custom CSS -->
+    <link href="plugins/bower_components/chartist/dist/chartist.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css">
+    <!-- Custom CSS -->
+    <link href="css/admin.min.css" rel="stylesheet">
+    <link href="css/style.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="preloader">
+        <div class="lds-ripple">
+            <div class="lds-pos"></div>
+            <div class="lds-pos"></div>
         </div>
-      </div>
     </div>
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
+        data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
+        <!-- ============================================================== -->
+        <!-- Topbar header - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+        <header class="topbar" data-navbarbg="skin5">
+            <nav class="navbar top-navbar navbar-expand-md navbar-dark">
+            <div class="navbar-header" data-logobg="skin6">
+                    <!-- ============================================================== -->
+                    <!-- Logo -->
+                    <!-- ============================================================== -->
+                    <a class="navbar-brand" href="dashboard.html">
+                        <!-- Logo icon -->
+                        <b class="logo-icon">
+                            <!-- Dark Logo icon -->
+                            <img src="plugins/images/logo-icon.png" alt="homepage" />
+                        </b>
+                        <!--End Logo icon -->
+                        <!-- Logo text -->
+                        <span class="logo-text">
+                            <!-- dark Logo text -->
+                            <img src="plugins/images/logo-text.png" alt="homepage" />
+                        </span>
+                    </a>
+                    <!-- ============================================================== -->
+                    <!-- End Logo -->
+                    <!-- ============================================================== -->
+                    <!-- ============================================================== -->
+                    <!-- toggle and nav items -->
+                    <!-- ============================================================== -->
+                    <a class="nav-toggler waves-effect waves-light text-dark d-block d-md-none"
+                        href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
+                </div>
+                <div class="navbar-header" data-logobg="skin6">
+                    <a class="nav-toggler waves-effect waves-light text-dark d-block d-md-none"
+                        href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
+                </div>
+                <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
+                   
+                    <!-- ============================================================== -->
+                    <!-- Right side toggle and nav items -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav ms-auto d-flex align-items-center">
+                        <li class=" in">
+                            <form role="search" class="app-search d-none d-md-block me-3">
+                                <input type="text" placeholder="Search..." class="form-control mt-0">
+                                <a href="" class="active">
+                                    <i class="fa fa-search"></i>
+                                </a>
+                            </form>
+                        </li>
+                        <!-- ============================================================== -->
+                        <!-- User profile and search -->
+                        <!-- ============================================================== -->
+                        <li>
+                            <a class="profile-pic" href="#"><span class="text-white font-medium">WELCOME <?php echo $admin; ?></span></a>
+                        </li>
+                        <!-- ============================================================== -->
+                        <!-- User profile and search -->
+                        <!-- ============================================================== -->
+                    </ul>
+                </div>
+            </nav>
+        </header>
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
-    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
-    <script src="../../assets/js/vendor/holder.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
-  </body>
+        <aside class="left-sidebar" data-sidebarbg="skin6">
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar">
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav">
+                        <!-- User Profile-->
+                        <li class="sidebar-item pt-2">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="dashboard.php?option=update_password"
+                                aria-expanded="false">
+                                <i class="far fa-clock" aria-hidden="true"></i>
+                                <span class="hide-menu">Update password</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="dashboard.php?option=admin_profile"
+                                aria-expanded="false">
+                                <i class="fas fa-address-card" aria-hidden="true"></i>
+                                <span class="hide-menu">Profile</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="dashboard.php?option=feedback"
+                                aria-expanded="false">
+                                <i class="far fa-comment-alt" aria-hidden="true"></i>
+                                <span class="hide-menu">Feedback</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="dashboard.php?option=rooms"
+                                aria-expanded="false">
+                                <i class="fas fa-th-list" aria-hidden="true"></i>
+                                <span class="hide-menu">Room</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="dashboard.php?option=booking_details"
+                                aria-expanded="false">
+                                <i class="fa fa-info-circle" aria-hidden="true"></i>
+                                <span class="hide-menu">Booking Details</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="dashboard.php?option=user_registration"
+                                aria-expanded="false">
+                                <i class="fa fa-users" aria-hidden="true"></i>
+                                <span class="hide-menu">User Registration</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="dashboard.php?option=slider"
+                                aria-expanded="false">
+                                <i class="fa fa-sliders-h" aria-hidden="true"></i>
+                                <span class="hide-menu">Slider</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index.php"
+                                aria-expanded="false">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                                <span class="hide-menu">Log out</span>
+                            </a>
+                        </li>
+                    </ul>
+
+                </nav>
+            </div>
+        </aside>
+        <div class="container-fluid">
+        <div class="page-wrapper">
+            <?php 
+            @$opt=$_GET['option'];
+            if($opt=="")
+            {
+            include('reports.php');	
+            }
+            else
+            {
+              if($opt=="feedback")
+              {
+              include('feedback.php');	
+              }
+              else if($opt=="slider")
+              {
+              include('slider.php');	
+              }
+              else if($opt=="update_slider")
+              {
+              include('update_slider.php');	
+              }
+              else if($opt=="add_slider")
+              {
+              include('add_slider.php');	
+              }
+              else if($opt=="update_password")
+              {
+              include('update_password.php');	
+              }
+              else if($opt=="rooms")
+              {
+              include('rooms.php');	
+              }
+              
+              else if($opt=="add_rooms")
+              {
+              include('add_rooms.php');	
+              }
+              else if($opt=="delete_room")
+              {
+              include('delete_room.php');	
+              }
+              
+              else if($opt=="update_room")
+              {
+                include('update_room.php');
+              }
+              else if($opt=="booking_details")
+              {
+                include('booking_details.php');
+              }
+              else if($opt=="user_registration")
+              {
+                include('user_registration.php');
+              }
+              else if($opt=="admin_profile")
+              {
+                include('admin_profile.php');
+              }
+            }
+            ?>
+            <footer class="footer text-center"> 2021 © Ample Admin brought to you by <a
+                    href="https://www.wrappixel.com/">Nhóm 5</a>
+            </footer>
+        </div>
+        </div>
+    </div>
+    <script src="plugins/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/app-style-switcher.js"></script>
+    <script src="plugins/bower_components/jquery-sparkline/jquery.sparkline.min.js"></script>
+    <script src="js/waves.js"></script>
+    <script src="js/sidebarmenu.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="plugins/bower_components/chartist/dist/chartist.min.js"></script>
+    <script src="plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
+    <script src="js/pages/dashboards/dashboard1.js"></script>
+</body>
 </html>
+

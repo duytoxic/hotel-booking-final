@@ -14,61 +14,100 @@ if (isset($update)) {
 <?php
 $sql = mysqli_query($con, "select * from create_account where email='$eid' ");
 $result = mysqli_fetch_assoc($sql);
-
-include('header.php');
-include('navigation.php');
 ?>
-
-<div class="container mb-5">
-  <h4 class="title--custom text-center">Thông tin cá nhân</h4>
+<div class="container-fluid">
   <div class="row">
-    <div class="col-md-6">
-      <?php echo $msg; ?>
-      <form class="form--primary" method="post">       
-        <div class="form-group input-group">
-          <label class="form-label" for="name">Họ và tên: </label>
-          <input type="text" class="form-control" value="<?php echo $result['name']; ?>" name="name" id="name" />
+        <!-- Column -->
+        <div class="col-lg-4 col-xlg-3 col-md-12">
+            <div class="white-box">
+                <div class="user-bg"> <img width="100%" alt="user" src="plugins/images/large/img1.jpg">
+                    <div class="overlay-box">
+                        <div class="user-content">
+                            <a href="javascript:void(0)"><img src="plugins/images/users/genu.jpg"
+                                    class="thumb-lg img-circle" alt="img"></a>
+                            <h4 class="text-white mt-2">User Name</h4>
+                            <h5 class="text-white mt-2">info@myadmin.com</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="user-btm-box mt-5 d-md-flex">
+                    <div class="col-md-4 col-sm-4 text-center">
+                        <h1>258</h1>
+                    </div>
+                    <div class="col-md-4 col-sm-4 text-center">
+                        <h1>125</h1>
+                    </div>
+                    <div class="col-md-4 col-sm-4 text-center">
+                        <h1>556</h1>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <div class="form-group input-group">
-          <label class="form-label" for="email">Email: </label>
-          <input type="email" class="form-control" value="<?php echo $result['email']; ?>" name="email" id="email" />
+        <!-- Column -->
+        <!-- Column -->
+        <div class="col-lg-8 col-xlg-9 col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <form class="form-horizontal form-material">
+                        <div class="form-group mb-4">
+                            <label class="col-md-12 p-0">Full Name</label>
+                            <div class="col-md-12 border-bottom p-0">
+                                <input type="text" <?php echo $result['name']; ?> name="name" id="name" 
+                                    class="form-control p-0 border-0"> 
+                        </div>
+                        </div>
+                        <div class="form-group mb-4">
+                            <label for="example-email" class="col-md-12 p-0">Email</label>
+                            <div class="col-md-12 border-bottom p-0">
+                                <input type="email" value="<?php echo $result['email']; ?>" name="email" id="email"
+                                    class="form-control p-0 border-0" name="example-email"
+                                    id="example-email">
+                            </div>
+                        </div>
+                        <div class="form-group mb-4">
+                            <label class="col-md-12 p-0">Password</label>
+                            <div class="col-md-12 border-bottom p-0">
+                                <input type="password" value="<?php echo $result['password']; ?>" name="pw" id="pw" class="form-control p-0 border-0">
+                            </div>
+                        </div>
+                        <div class="form-group mb-4">
+                            <label class="col-md-12 p-0">Phone No</label>
+                            <div class="col-md-12 border-bottom p-0">
+                                <input type="text" value="<?php echo $result['address']; ?>" name="address" id="address" class="form-control p-0 border-0">
+                            </div>
+                        </div>
+                        <div class="form-group mb-4">
+                            <label class="col-md-12 p-0">Address</label>
+                            <div class="col-md-12 border-bottom p-0">
+                                <input type="text" value="<?php echo $result['mobile']; ?>" name="phone" id="phone" class="form-control p-0 border-0">
+                            </div>
+                        </div>
+                        <div class="form-group mb-4">
+                            <label class="col-md-12 p-0">Gender</label>
+                            <div class="col-md-12 border-bottom p-0">
+                                <input type="text" class="form-control" value="<?php echo $result['gender']; ?>" name="gender" id="gender" class="form-control p-0 border-0">
+                            </div>
+                        </div>
+                        <div class="form-group mb-4">
+                            <div class="col-sm-12">
+                                <button name="update" class="btn btn-success">Update Profile</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
-
-        <div class="form-group input-group">
-          <label class="form-label" for="pw">Mật khẩu: </label>
-          <input type="password" class="form-control" value="<?php echo $result['password']; ?>" name="pw" id="pw" />
-        </div>
-
-        <div class="form-group input-group">
-          <label class="form-label" for="phone">Điện thoại: </label>
-          <input type="text" class="form-control" value="<?php echo $result['mobile']; ?>" name="phone" id="phone" />
-        </div>
-
-        <div class="form-group input-group">
-          <label class="form-label" for="address">Địa chỉ: </label>
-          <input type="text" class="form-control" value="<?php echo $result['address']; ?>" name="address" id="address" />
-        </div>
-
-        <div class="form-group input-group">
-          <label class="form-label" for="gender">Giới tính: </label>
-          <input type="text" class="form-control" value="<?php echo $result['gender']; ?>" name="gender" id="gender" />
-        </div>
-
-        <div class="text-center mt-3">
-          <input type="submit" value="Cập nhật" class="button btn-custom" name="update" />
-        </div>
-      </form>
+        <!-- Column -->
     </div>
-
-    <div class="col-md-6">
-      <div class="profile-image d-flex">
-        <img src="assets/images/default_image_hotel.jpg" alt="img-profile">
-      </div>      
-    </div>
-  </div>
+    <!-- Row -->
+    <!-- ============================================================== -->
+    <!-- End PAge Content -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Right sidebar -->
+    <!-- ============================================================== -->
+    <!-- .right-sidebar -->
+    <!-- ============================================================== -->
+    <!-- End Right sidebar -->
+    <!-- ============================================================== -->
 </div>
-
-<?php
-include('footer.php')
-?>

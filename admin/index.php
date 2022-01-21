@@ -24,49 +24,64 @@ if(isset($login))
 	}
 }
 ?>
-<!DOCTYPE html>
+
+<!doctype html>
 <html lang="en">
-<head>
-  <title>Online Hotel.Com</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-  <link href="../css/style.css"rel="stylesheet"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Akronim|Libre+Baskerville" rel="stylesheet">
-</head>
-<body id="primary"style="margin-top:50px;">
-	<?php
-include('Menu Bar.php');
-	?>
-<div class="container-fluid"> <!-- Primary Id-->
-  <div class="container">
-    <div class="row"><br>
-      <div class="col-sm-4"></div>
-		<div class="col-sm-4 text-center"style="box-shadow:2px 2px 2px;background-color:#990707;">
-			
-			<h1 align="center"><b><font style="font-family: 'Libre Baskerville', serif;text-shadow:5px 5px #000;">Admin Login ?</font></b></h1>
+  <head>
+  	<title>Login Admin</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-          <img src="../image/clipart/user.png"alt="Bird" width="200" height="170"style="padding-top:30px;">
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
 
-			<?php echo @$error;?>
-          <form action="#" method="post"><br>
-              <div class="form-group">
-                <input type="Email" class="form-control"name="eid" placeholder="Email Id"required>
-              </div>
-            <div class="form-group">
-                <input type="Password" class="form-control"name="pass" placeholder="Password"required>
-            </div>
-          <input type="submit" value="Login" name="login" class="btn btn-primary btn-group btn-group-justified"required>
-      	</form><br>  
-        </div>
-    </div><br>
-  </div>
-</div>
-<?php
-include('Footer.php');
-?>
-</body>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<link rel="stylesheet" href="css/style.css">
+
+	</head>
+	<body>
+	<section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-7 col-lg-5">
+					<div class="login-wrap p-4 p-md-5">
+		      	<div class="icon d-flex align-items-center justify-content-center">
+		      		<span class="fa fa-user-o"></span>
+		      	</div>
+		      	<h3 class="text-center mb-4">Admin sign In</h3>
+						<form action="#" class="login-form">
+		      		<div class="form-group">
+		      			<input name="eid" type="text" class="form-control rounded-left" placeholder="Username" required>
+		      		</div>
+	            <div class="form-group d-flex">
+	              <input name="pass" type="password" class="form-control rounded-left" placeholder="Password" required>
+	            </div>
+	            <div class="form-group">
+	            	<button name="login" type="submit" class="form-control btn btn-primary rounded submit px-3">Login</button>
+	            </div>
+	            <div class="form-group d-md-flex">
+	            	<div class="w-50">
+	            		<label class="checkbox-wrap checkbox-primary">Remember Me
+									  <input type="checkbox" checked>
+									  <span class="checkmark"></span>
+									</label>
+								</div>
+								<div class="w-50 text-md-right">
+									<a href="../index.php">Home</a>
+								</div>
+	            </div>
+	          </form>
+	        </div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script src="js/jquery.min.js"></script>
+  <script src="js/popper.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/main.js"></script>
+
+	</body>
 </html>
+
