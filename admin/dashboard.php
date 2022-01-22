@@ -239,7 +239,7 @@ if($admin=="")
               }
             }
             ?>
-            <footer class="footer text-center"> 2021 © Made by <a
+            <footer class="footer text-center"> 2022 © Made by <a
                     href="https://www.wrappixel.com/">Nhóm 4</a>
             </footer>
         </div>
