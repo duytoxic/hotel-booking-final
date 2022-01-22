@@ -8,19 +8,19 @@
 	}
 </script>
 <table class="table table-bordered table-striped table-hover">
-	<h1>Room Details</h1><hr>
+	<h1 style="text-align: center;">Phòng</h1><hr>
 	<tr>
-	<td colspan="8"><a href="dashboard.php?option=add_rooms" class="btn btn-primary">Add New Rooms</a></td>
+	<td colspan="8"><a href="dashboard.php?option=add_rooms" class="btn btn-primary">Thêm phòng</a></td>
 	</tr>
 	<tr style="height:40">
-		<th>Sr No</th>
-		<th>Image</th>
-		<th>Room No</th>
-		<th>TYpe</th>
-		<th>Price</th>
-		<th>Details</th>
-		<th>Update</th>
-		<th>Delete</th>
+		<th>Thứ tự</th>
+		<th>Ảnh</th>
+		<th>Số phòng</th>
+		<th>Số người</th>
+		<th>Giá</th>
+		<th>Chi tiết</th>
+		<th>Sửa</th>
+		<th>Xóa</th>
 	</tr>
 <?php 
 $i=1;
@@ -39,7 +39,7 @@ $path="../uploads/rooms/$img";
 		<td><?php echo $res['price']; ?></td>
 		<td><?php echo $res['details']; ?></td>
 
-		<td><a href="dashboard.php?option=update_room&id=<?php echo $id; ?>">Sua</a></td>
+		<td><a href="dashboard.php?option=update_room&id=<?php echo $id; ?>">Sửa</a></td>
 
 		
 		<td><a href="#" onclick="delRoom('<?php echo $id; ?>')"><span class="glyphicon glyphicon-remove" style='color:red'></span></a></td>

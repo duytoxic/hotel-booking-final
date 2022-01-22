@@ -9,14 +9,14 @@
 </script>
 <table class="table table-bordered table-striped table-hover">
 	<tr>
-	<td colspan="5"><a href="dashboard.php?option=add_slider" class="btn btn-primary">Add New</a></td>
+	<td colspan="5"><a href="dashboard.php?option=add_slider" class="btn btn-primary">Thêm mới</a></td>
 	</tr>
 	<tr style="height:40">
-		<th>Sr No</th>
-		<th>Image</th>
-		<th>Caption</th>
-		<th>Update</th>
-		<th>Delete</th>
+		<th>Thứ tự</th>
+		<th>Ảnh</th>
+		<th>Tiêu đề</th>
+		<th>Sửa</th>
+		<th>Xóa</th>
 	</tr>
 <?php 
 $i=1;

@@ -8,14 +8,14 @@
 	}
 </script>
 <table class="table table-striped table-hover">
-	<h1>Feedback</h1><hr>
+	<h1 style="text-align: center;">Phản hồi</h1><hr>
 	<tr>
-		<th>Sr No</th>
-		<th>Name</th>
+		<th>Thứ tự</th>
+		<th>Tên</th>
 		<th>Email</th>
-		<th>Mobile</th>
-		<th>Message</th>
-		<th>Delete</th>
+		<th>Điện thoại</th>
+		<th>Tin nhắn</th>
+		<th>Xóa</th>
 	</tr>
 <?php 
 $i=1;

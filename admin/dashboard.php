@@ -99,7 +99,7 @@ if($admin=="")
                         <!-- User profile and search -->
                         <!-- ============================================================== -->
                         <li>
-                            <a class="profile-pic" href="#"><span class="text-white font-medium">WELCOME <?php echo $admin; ?></span></a>
+                            <a class="profile-pic" href="#"><span class="text-white font-medium">Xin chào <?php echo $admin; ?></span></a>
                         </li>
                         <!-- ============================================================== -->
                         <!-- User profile and search -->
@@ -133,21 +133,21 @@ if($admin=="")
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="dashboard.php?option=feedback"
                                 aria-expanded="false">
-                                <i class="fas fa-user" aria-hidden="true"></i>
-                                <span class="hide-menu">Tài khoản quản trị</span>
+                               <i class="far fa-comment-alt" aria-hidden="true"></i>
+                                <span class="hide-menu">Phản hồi</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="dashboard.php?option=rooms"
                                 aria-expanded="false">
                                 <i class="fas fa-th-list" aria-hidden="true"></i>
-                                <span class="hide-menu">Thông tin phòng</span>
+                                <span class="hide-menu">Phòng</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="dashboard.php?option=booking_details"
                                 aria-expanded="false">
-                                <i class="fa fa-info-circle" aria-hidden="true"></i>
+                                <i class="fas fa-bookmark" aria-hidden="true"></i>
                                 <span class="hide-menu">Khách đặt phòng</span>
                             </a>
                         </li>

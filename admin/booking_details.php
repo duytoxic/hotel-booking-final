@@ -1,18 +1,18 @@
 
 <table class="table table-bordered table-striped table-hover">
-	<h1>Room Booking Details</h1><hr>
+	<h1 style="text-align: center;">Thông tin khách đặt phòng</h1><hr>
 	<tr>
-		<th>Sr No</th>
-		<th>Name</th>
+		<th>Thứ tự</th>
+		<th>Tên</th>
 		<th>Email</th>
-		<th>Mobile Number</th>
-		<th>Address</th>
-		<th>Room Type</th>
-		<th>Check in Date</th>
-		<th>Check Out Time</th>
-		<th>Check Out Date</th>
-		<th>Occupancy</th>
-		<th>Cancel Order</th>
+		<th>Điện thoại</th>
+		<th>Địa chỉ</th>
+		<th>Kiểu phòng</th>
+		<th>Ngày đăng ký</th>
+		<th>Thời gian</th>
+		<th>Ngày trả phòng</th>
+		<th>Số người</th>
+		<th>Hủy đặt phòng</th>
 	</tr>
 
 <?php 
@@ -34,7 +34,7 @@ $oid=$res['id'];
 		<td><?php echo $res['check_in_time']; ?></td>
 		<td><?php echo $res['check_out_date']; ?></td>
 		<td><?php echo $res['Occupancy']; ?></td>
-		<td><a style="color:red" href="cancel_order.php?booking_id=<?php echo $oid; ?>">Cancel</a></td>
+		<td><a style="color:red" href="cancel_order.php?booking_id=<?php echo $oid; ?>">Hủy</a></td>
 	</td>
 	</tr>
 <?php 	

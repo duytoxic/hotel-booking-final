@@ -26,20 +26,20 @@ $sql=mysqli_query($con,"select * from admin where username='$admin' and password
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-md-7 col-lg-5">
-					<h1 style="text-align: center;">Update password</h1>
+					<h1 style="text-align: center;">Đổi mật khẩu</h1>
 					<div class="login-wrap p-4 p-md-5">
 						<form action="#" class="login-form">
 		      		<div class="form-group d-flex">
-	              <input name="op" type="password" class="form-control rounded-left" placeholder="Old password" required>
+	              <input name="op" type="password" class="form-control rounded-left" placeholder="Mật khẩu cũ" required>
 	            </div>
 	            <div class="form-group d-flex">
-	              <input name="np" type="password" class="form-control rounded-left" placeholder="New password" required>
+	              <input name="np" type="password" class="form-control rounded-left" placeholder="Mật khẩu mới" required>
 	            </div>
 	            <div class="form-group d-flex">
-	              <input name="cp" type="password" class="form-control rounded-left" placeholder="Confirm password" required>
+	              <input name="cp" type="password" class="form-control rounded-left" placeholder="Xác nhận lại mật khẩu" required>
 	            </div>
 	            <div class="form-group">
-	            	<button name="update" required type="submit" class="form-control btn btn-primary rounded submit px-3">Update password</button>
+	            	<button name="update" required type="submit" class="form-control btn btn-primary rounded submit px-3">Xác nhận</button>
 	            </div>
 	            </div>
 	          </form>
