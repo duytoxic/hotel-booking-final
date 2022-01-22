@@ -34,7 +34,7 @@ include('navigation.php');
 
 <?php echo @$error; ?>
 
-<div class="login_from-wrapper mt-5">
+<div class="login_from-wrapper mt-5 mb-5">
   <h3 class="text-center text--title">Đăng nhập ngay</h3>
   <form class="row form--primary" method="post" id="contactForm" novalidate>
     <div class="col-12">

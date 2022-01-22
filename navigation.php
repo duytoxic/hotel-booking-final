@@ -38,8 +38,8 @@ include('connection.php');
           <ul class="nav navbar-nav menu_nav">
             <li class="nav-item active"><a class="nav-link" href="index.php">Trang chủ</a></li>
             <li class="nav-item"><a class="nav-link" href="rooms.php">Phòng</a></li>
-            <li class="nav-item"><a class="nav-link" href="about.php">Giới thiệu</a></li>
-            <li class="nav-item"><a class="nav-link" href="image gallery.php">Liên hệ</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Giới thiệu</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Liên hệ</a></li>
           </ul>
         </div>
         <ul class="nav navbar-nav nav-user">

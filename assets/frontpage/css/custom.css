@@ -70,9 +70,16 @@ a:hover {
   color: #999;
 }
 
+.itemRoom__link{
+  background-color: black;
+  width: 100%;
+  overflow: hidden;
+}
+
 .itemRoom__link img{
   width: 100% !important;
   object-fit: cover !important;
+  opacity: 0.8;
 }
 
 .header-btn-more{
@@ -237,5 +244,47 @@ margin-top: 10px;
 }
 
 .room-navigation ul li:hover a{
+  color:#c9a96a ;
+}
+
+.breadcrumb-custom{
+  height: 50px;
+  background-color: #f1f1f1;
+  flex-direction: row;
+  align-items: center;
+  color: #141414;
+}
+
+p{
+  margin-bottom: 0 !important;
+}
+
+.bill-container__empty {
+  background-color: #ffffff;
+  min-height: 350px;
+  position: relative;
+}
+.bill-container__empty-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.bill-container__empty-content img {
+  width: 100px;
+  height: 100px;
+}
+.bill-container__empty-content p {
+  margin-top: 15px;
+}
+
+.text-link-custom{
+  color:#c9a96a ;
+  font-weight: 600;
+  transition: 0.4s;
+}
+
+.text-link-custom:hover{
   color:#c9a96a ;
 }

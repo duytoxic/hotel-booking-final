@@ -6,6 +6,12 @@ include('header.php');
 include('navigation.php')
 ?>
 
+<div class="breadcrumb-custom d-flex">
+  <div class="container">
+  <p>Trang chủ / Phòng</p>
+  </div>
+</div>
+
 <div class="container-fluid my-5">
   <div class="row">
     <div class="col-lg-3">

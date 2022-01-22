@@ -10,13 +10,7 @@ include('navigation.php')
   <div class="container h-100">
     <div class="contact-banner">
       <div class="text-center">
-        <h1>Accomodation</h1>
-        <nav aria-label="breadcrumb" class="banner-breadcrumb">
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Accomodation</li>
-          </ol>
-        </nav>
+        <h1>Đặt phòng khách sạn giá rẻ</h1>
       </div>
     </div>
   </div>
@@ -35,7 +29,7 @@ include('navigation.php')
 
   <div class="row">
     <?php
-    $sql = mysqli_query($con, "select * from rooms");
+    $sql = mysqli_query($con, "select * from rooms where status = 1");
     $countHotelPop = 0;
     while ($r_res = mysqli_fetch_assoc($sql)) {
       if ($countHotelPop === 5) {
