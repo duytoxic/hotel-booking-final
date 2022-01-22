@@ -239,8 +239,8 @@ if($admin=="")
               }
             }
             ?>
-            <footer class="footer text-center"> 2021 © Ample Admin brought to you by <a
-                    href="https://www.wrappixel.com/">Nhóm 5</a>
+            <footer class="footer text-center"> 2021 © Made by <a
+                    href="https://www.wrappixel.com/">Nhóm 4</a>
             </footer>
         </div>
         </div>
