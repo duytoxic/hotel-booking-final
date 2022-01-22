@@ -1,16 +1,13 @@
 
-<table class="table table-bordered table-striped table-hover">
-	<h1 style="text-align: center;">Thông tin khách đặt phòng</h1><hr>
+<table class="table table-bordered table-striped table-hover table-responsive">
+	<h3 class="text-center mt-2 py-4">Thông tin khách đặt phòng</h3>
 	<tr>
 		<th>Thứ tự</th>
-		<th>Tên</th>
-		<th>Email</th>
-		<th>Điện thoại</th>
 		<th>Địa chỉ</th>
-		<th>Kiểu phòng</th>
+		<th>Email</th>
 		<th>Ngày đăng ký</th>
-		<th>Thời gian</th>
-		<th>Ngày trả phòng</th>
+		<th>Thời gian nhận phòng</th>
+		<th>Thời gian trả phòng</th>
 		<th>Số người</th>
 		<th>Hủy đặt phòng</th>
 	</tr>
@@ -25,15 +22,12 @@ $oid=$res['id'];
 ?>
 <tr>
 		<td><?php echo $i;$i++; ?></td>
-		<td><?php echo $res['name']; ?></td>
-		<td><?php echo $res['email']; ?></td>
-		<td><?php echo $res['phone']; ?></td>
 		<td><?php echo $res['address']; ?></td>
-		<td><?php echo $res['room_type']; ?></td>
-		<td><?php echo $res['check_in_date']; ?></td>
+		<td><?php echo $res['email']; ?></td>
+		<td><?php echo $res['check_in_time'] . $res['check_in_date']; ?></td>
 		<td><?php echo $res['check_in_time']; ?></td>
 		<td><?php echo $res['check_out_date']; ?></td>
-		<td><?php echo $res['Occupancy']; ?></td>
+		<td><?php echo $res['occupancy']; ?></td>
 		<td><a style="color:red" href="cancel_order.php?booking_id=<?php echo $oid; ?>">Hủy</a></td>
 	</td>
 	</tr>

@@ -36,13 +36,14 @@ include('navigation.php')
               <div class="image-wrapper"><img src="uploads/rooms/<?php echo $res['image']; ?>" alt="photo" class="img-responsive"></div>
               <div class="text">
                 <h3><?php echo $res['name']; ?></h3>
-                <p>Giá <strong><?php echo $res['price']; ?> / đêm</strong></p>
+                <p>Giá <strong><?php echo currency_format($res['price']); ?> / đêm</strong></p>
                 <div class="post-meta mb30">
                   <ul>
                     <li><span class="review-rate">4.7</span> <i class="icon-star"></i> 252 Reviews</li>
                     <li><i class="icon-user2"></i> 2 người</li>
                   </ul>
                 </div>
+                
                 <div class="d-flex justify-content-between align-items-center">
                   <a href="room_details.php?room_id=<?php echo $res['room_id']; ?>" class="button button--active" disabled>Xem chi tiết</a>
                   <?php 

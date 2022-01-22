@@ -93,22 +93,10 @@ if ($admin == "") {
         <nav class="sidebar-nav">
           <ul id="sidebarnav">
             <!-- User Profile-->
-            <li class="sidebar-item pt-2">
-              <a class="sidebar-link waves-effect waves-dark sidebar-link" href="dashboard.php?option=update_password" aria-expanded="false">
-                <i class="fas fa-key" aria-hidden="true"></i>
-                <span class="hide-menu">Đổi mật khẩu</span>
-              </a>
-            </li>
             <li class="sidebar-item">
               <a class="sidebar-link waves-effect waves-dark sidebar-link" href="dashboard.php?option=admin_profile" aria-expanded="false">
                 <i class="fas fa-address-card" aria-hidden="true"></i>
                 <span class="hide-menu">Hồ sơ quản trị viên</span>
-              </a>
-            </li>
-            <li class="sidebar-item">
-              <a class="sidebar-link waves-effect waves-dark sidebar-link" href="dashboard.php?option=feedback" aria-expanded="false">
-                <i class="far fa-comment-alt" aria-hidden="true"></i>
-                <span class="hide-menu">Phản hồi</span>
               </a>
             </li>
             <li class="sidebar-item">

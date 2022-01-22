@@ -35,25 +35,25 @@ if (isset($add)) { {
     </tr>
 
     <tr>
-      <th>Price</th>
+      <th>Giá</th>
         <td><input type="text" name="price" class="form-control" required />
       </td>
     </tr>
 
     <tr>
-      <th>Address</th>
+      <th>Địa chỉ</th>
       <td><input type="text" name="address" class="form-control" required />
       </td>
     </tr>
 
     <tr>
-      <th>Details</th>
+      <th>Chi tiết</th>
       <td><textarea name="details" class="form-control" required></textarea>
       </td>
     </tr>
 
     <tr>
-      <th>Images</th>
+      <th>Hình ảnh</th>
       <td><input type="file" name="img" class="form-control" required />
       </td>
     </tr>

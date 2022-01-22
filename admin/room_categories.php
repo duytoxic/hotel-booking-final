@@ -3,7 +3,7 @@
 	{
 		if(confirm("Bạn có muốn xóa phòng này khỏi danh sách ?"))
 		{
-		window.location.href='delete_room.php?id='+id;	
+		window.location.href='delete_room_categories.php?id='+id;	
 		}
 	}
 </script>

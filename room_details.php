@@ -45,7 +45,7 @@ $res = mysqli_fetch_assoc($sql);
       <p><?php echo $res['details'] ?></p>
 
       <!-- Amenity -->
-      <h3 class="title title--h3 mt-4 mt-sm-5">Amenity</h3>
+      <h3 class="title title--h3 mt-4 mt-sm-5">Dịch vụ</h3>
       <div class="row">
         <ul class="list-unstyled list-feature col-12 col-md-4">
           <li class="list-feature__item">

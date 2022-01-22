@@ -18,7 +18,7 @@ if (isset($savedata)) {
   } else {
 
     $sql = "insert into booking_details 
-  values('','$name','$room_id','$email','$phone','$address','$cdate','$ctime','$occupancy')";
+  values('','$eid','$name','$room_id','$email','$phone','$address','$cdate','$ctime','$ldate','$ltime','$occupancy')";
     if (mysqli_query($con, $sql)) {
       $msg = '<div class="alert--message">
       <i class="fal fa-times btn--close--message"></i>
@@ -35,52 +35,65 @@ if (isset($savedata)) {
 include('header.php');
 ?>
 
-<div class="container mt-5" id="primary">
+<div class="container mt-4" id="primary">
   <?php echo @$msg;  ?>
-  <h1 class="text-center">Đặt phòng ngay</h1>
+  <?php
+    $sql_get_user = mysqli_query($con, "select * from account where email='$eid' ");
+    $user = mysqli_fetch_assoc($sql_get_user);
+  ?>
+  <h3 class="text-center mb-4">Đặt phòng ngay</h3>
   <form class="form--primary" method="post">
     <div class="row">
       <div class="col-md-6">
         <div class="form-group">
           <label>Tên: </label>
-          <input type="text" class="form-control" value="<?php echo $result['name']; ?>" name="name" placeholder="Họ và Tên" required>
+          <input type="text" class="form-control" value="<?php echo $user['name']; ?>" name="name" placeholder="Họ và Tên" required>
         </div>
 
         <div class="form-group">
           <label>Email: </label>
-          <input type="text" class="form-control" value="<?php echo $result['email']; ?>" name="email" placeholder="Email" required>
+          <input type="text" class="form-control" value="<?php echo $user['email']; ?>" name="email" placeholder="Email" required>
         </div>
 
         <div class="form-group">
           <label>Số điện thoại: </label>
-          <input type="text" class="form-control" value="<?php echo $result['mobile']; ?>" name="mobile" placeholder="Điện thoại" required>
+          <input type="text" class="form-control" value="<?php echo $user['mobile']; ?>" name="mobile" placeholder="Điện thoại" required>
         </div>
 
         <div class="form-group">
           <label>Địa chỉ: </label>
-          <input type="text" class="form-control" value="<?php echo $result['address']; ?>" name="address" placeholder="Địa chỉ" required>
+          <input type="text" class="form-control" value="<?php echo $user['address']; ?>" name="address" placeholder="Địa chỉ" required>
+        </div>
+        <div class="form-group">
+          <label>Số người: </label>
+          <select class="select-control form-control" name="occupancy" id="selectRoomCat" required>
+            <option value="1 người">Đơn</option>
+            <option value="2 người">Cặp đôi</option>
+            <option value="3 người">3 Người</option>
+            <option value="4 người">4 Người</option>
+          </select>       
         </div>
       </div>
 
       <div class="col-md-6">
         <div class="form-group">
-          <label>Thời gian Check In: </label>
+          <label>Ngày nhận phòng: </label>
           <input type="date" name="cdate" class="form-control" required>
         </div>
 
         <div class="form-group">
-          <label>Thời gian Check In: </label>
+          <label>Thời gian nhận phòng: </label>
           <input type="time" name="ctime" class="form-control" required>
         </div>
 
         <div class="form-group">
-          <label>Số người: </label>
-          <select class="select-control form-control" name="occupancy" id="selectRoomCat" required>
-            <option value="single">Đơn</option>
-            <option value="double">Cặp đôi</option>
-            <option value="three">3 Người</option>
-            <option value="four">4 Người</option>
-          </select>       
+          <label>Ngày trả phòng: </label>
+          <input type="date" name="ldate" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+          <label>Thời gian trả phòng: </label>
+          <input type="time" name="ltime" class="form-control" required>
         </div>
 
       </div>

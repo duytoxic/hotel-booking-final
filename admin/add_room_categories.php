@@ -1,9 +1,9 @@
 <?php
+include('../connection.php');
 if (isset($add)) { {
-    $img = $_FILES['img']['name'];
     mysqli_query($con, "insert into room_categories values('','$name','$slug')");
-    header('location:dashboard.php?option=room_categories');	
   }
+  echo 'Thêm thành công!';
 }
 ?>
 

@@ -23,7 +23,7 @@ include('navigation.php');
         <tr>
           <th>STT</th>
           <th>Người đặt</th>
-          <th>Address</th>
+          <th>Địa chỉ</th>
           <th>Thời gian đến nhận phòng</th>
           <th>Thời gian trả phòng</th>
           <th>Số người</th>
@@ -32,7 +32,7 @@ include('navigation.php');
 
         <?php
         $sql = mysqli_query($con, "select * from booking_details as bkdt
-        inner join rooms as rm on rm.room_id = bkdt.room_id ");
+        inner join rooms as rm on rm.room_id = bkdt.room_id where bkdt.email = '$eid' ");
 
         while ($result = mysqli_fetch_assoc($sql)) {
           $oid = $result['id'];
@@ -44,12 +44,9 @@ include('navigation.php');
                                     echo $result[$i] ?></td>
             <td><?php echo $result['username']; ?></td>
             <td><?php echo $result['address']; ?></td>
-            <td><?php echo $result['check_in_date']; ?></td>
-            <td><?php echo $result['check_in_date']; ?></td>
+            <td><?php echo $result['check_in_time'] . ' ' .$result['check_in_date']; ?></td>
+            <td><?php echo $result['check_out_time'] . ' ' .$result['check_out_date']; ?></td>
             <td><?php echo $result['occupancy']; ?></td>
-            <td>
-              <a href="order_detail.php?order_id=<?php echo $oid; ?>" class="text-link">Xem chi tiết</a>
-            </td>
             <td>
               <a href="cancel_order.php?order_id=<?php echo $oid ?>&room_id=<?php echo $result['room_id'] ?>" class="btn btn-danger btn-sm">Hủy</a>
             </td>

@@ -16,7 +16,7 @@
 		<th>Thứ tự</th>
 		<th>Ảnh</th>
 		<th>Số phòng</th>
-		<th>Số người</th>
+		<th>Loại phòng</th>
 		<th>Giá</th>
 		<th>Chi tiết</th>
 		<th>Sửa</th>
