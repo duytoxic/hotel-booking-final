@@ -17,7 +17,7 @@
 
 <?php 
 $i=1;
-$sql=mysqli_query($con,"select * from room_booking_details");
+$sql=mysqli_query($con,"select * from booking_details");
 while($res=mysqli_fetch_assoc($sql))
 {
 $oid=$res['id'];

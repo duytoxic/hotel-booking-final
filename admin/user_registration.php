@@ -8,12 +8,10 @@
 		<th>Điện thoại</th>
 		<th>Địa chỉ</th>
 		<th>Giới tính</th>
-		<th>Quốc gia</th>
-		<th>Ảnh</th>
 	</tr>
 	<?php 
 $i=1;
-$sql=mysqli_query($con,"select * from create_account");
+$sql=mysqli_query($con,"select * from account");
 while($res=mysqli_fetch_assoc($sql))
 {
 ?>
@@ -24,9 +22,6 @@ while($res=mysqli_fetch_assoc($sql))
 		<td><?php echo $res['password']; ?></td>
 		<td><?php echo $res['mobile']; ?></td>
 		<td><?php echo $res['address']; ?></td>
-		<td><?php echo $res['gender']; ?></td>
-		<td><?php echo $res['country']; ?></td>
-		<td><?php echo $res['pictrure']; ?></td>
 	</td>
 	</tr>	
 <?php 	
