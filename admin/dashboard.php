@@ -119,57 +119,57 @@ if($admin=="")
                         <li class="sidebar-item pt-2">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="dashboard.php?option=update_password"
                                 aria-expanded="false">
-                                <i class="far fa-clock" aria-hidden="true"></i>
-                                <span class="hide-menu">Update password</span>
+                                <i class="fas fa-key" aria-hidden="true"></i>
+                                <span class="hide-menu">Đổi mật khẩu</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="dashboard.php?option=admin_profile"
                                 aria-expanded="false">
                                 <i class="fas fa-address-card" aria-hidden="true"></i>
-                                <span class="hide-menu">Profile</span>
+                                <span class="hide-menu">Hồ sơ</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="dashboard.php?option=feedback"
                                 aria-expanded="false">
-                                <i class="far fa-comment-alt" aria-hidden="true"></i>
-                                <span class="hide-menu">Feedback</span>
+                                <i class="fas fa-user" aria-hidden="true"></i>
+                                <span class="hide-menu">Tài khoản quản trị</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="dashboard.php?option=rooms"
                                 aria-expanded="false">
                                 <i class="fas fa-th-list" aria-hidden="true"></i>
-                                <span class="hide-menu">Room</span>
+                                <span class="hide-menu">Thông tin phòng</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="dashboard.php?option=booking_details"
                                 aria-expanded="false">
                                 <i class="fa fa-info-circle" aria-hidden="true"></i>
-                                <span class="hide-menu">Booking Details</span>
+                                <span class="hide-menu">Khách đặt phòng</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="dashboard.php?option=user_registration"
                                 aria-expanded="false">
                                 <i class="fa fa-users" aria-hidden="true"></i>
-                                <span class="hide-menu">User Registration</span>
+                                <span class="hide-menu">Thông tin người dùng</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="dashboard.php?option=slider"
                                 aria-expanded="false">
                                 <i class="fa fa-sliders-h" aria-hidden="true"></i>
-                                <span class="hide-menu">Slider</span>
+                                <span class="hide-menu">Thanh trượt</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index.php"
                                 aria-expanded="false">
-                                <i class="fa fa-user" aria-hidden="true"></i>
-                                <span class="hide-menu">Log out</span>
+                                <i class="fas fa-sign-out-alt" aria-hidden="true"></i>
+                                <span class="hide-menu">Đăng xuất</span>
                             </a>
                         </li>
                     </ul>
