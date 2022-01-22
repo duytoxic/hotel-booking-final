@@ -2,6 +2,7 @@
 session_start();
 $eid = $_SESSION['create_account_logged_in'];
 error_reporting(1);
+include('connection.php');
 ?>
 
 <header class="header_area">
@@ -44,10 +45,14 @@ error_reporting(1);
           <ul class="nav navbar-nav menu_nav">
             <li class="nav-item active"><a class="nav-link" href="index.php">Trang chủ</a></li>
             <li class="nav-item submenu dropdown">
-              <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Phòng</a>
+              <a href="rooms.php" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Phòng</a>
               <ul class="dropdown-menu">
-                <li class="nav-item"><a class="nav-link" href="about.php">Phòng loại I</a></li>
-                <li class="nav-item"><a class="nav-link" href="blog-single.html">Phòng loại II</a></li>
+              <?php
+                $sql = mysqli_query($con, "select * from room_categories");
+                while ($result = mysqli_fetch_assoc($sql)){
+                  echo '<li class="nav-item"><a class="nav-link" href="rooms.php">'. $result['name'] .'</a></li>';
+                } 
+              ?>
               </ul>
             </li>
             <li class="nav-item"><a class="nav-link" href="about.php">Giới thiệu</a></li>
@@ -69,7 +74,7 @@ error_reporting(1);
                 <li class="nav-item"><a class="nav-link" href="logout.php">Đăng xuất</a></li>
               </ul>
             </li>
-          <?PHP } else {
+          <?php } else {
           ?>
             <li><a href="login.php" title="login" class="button button-outline"><span class="glyphicon glyphicon-log-in"></span>&nbsp;&nbsp;User Login</a>
             </li>

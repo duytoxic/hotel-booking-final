@@ -2,7 +2,7 @@
 session_start();
 error_reporting(1);
 if ($_SESSION['create_account_logged_in'] != "") {
-  header('location:bookingForm.php');
+  header('location:index.php');
 }
 error_reporting(1);
 require('connection.php');
@@ -17,7 +17,7 @@ if (isset($login)) {
     $sql = mysqli_query($con, "select * from account where email='$eid' && password='$pass' ");
     if (mysqli_num_rows($sql)) {
       $_SESSION['create_account_logged_in'] = $eid;
-      header('location:bookingForm.php');
+      header('location:index.php');
     } else {
       $error =  '<div class="alert--message">
       <i class="fal fa-times btn--close--message"></i>
@@ -28,11 +28,8 @@ if (isset($login)) {
 }
 ?>
 <?php
-include('header.php')
-?>
-
-<?php
-include('navigation.php')
+include('header.php');
+include('navigation.php');
 ?>
 
 <?php echo @$error; ?>

@@ -5,22 +5,25 @@ include('navigation.php');
 if ($eid == "") {
   header('location:login.php');
 }
-$sql = mysqli_query($con, "select * from room_booking_details where email='$eid' ");
-$result = mysqli_fetch_assoc($sql);
 
 extract($_REQUEST);
 error_reporting(1);
 if (isset($savedata)) {
-  $sql = mysqli_query($con, "select * from room_booking_details where email='$email' and room_type='$room_type' ");
+  $sql = mysqli_query($con, "select * from booking_details where room_id='$room_id' ");
   if (mysqli_num_rows($sql)) {
-    $msg = "<h1 style='color:red'>Phòng này đã được đặt</h1>";
+    $msg = '<div class="alert--message">
+    <i class="fal fa-times btn--close--message"></i>
+    Phòng này đã được đặt. Vui lòng chọn phòng khác
+  </div>';
   } else {
 
-    $sql = "insert into room_booking_details(name,email,phone,address,city,state,zip,contry,room_type,Occupancy,check_in_date,check_in_time,check_out_date) 
-  values('$name','$email','$phone','$address','$city','$state','$zip','$country',
-  '$room_type','$Occupancy','$cdate','$ctime','$codate')";
+    $sql = "insert into booking_details 
+  values('','$name','$room_id','$email','$phone','$address','$cdate','$ctime','$occupancy')";
     if (mysqli_query($con, $sql)) {
-      $msg = "<h1 style='color:blue'>Bạn đã đặt phòng thành công</h1><h2><a href='order.php'>Xem chi tiết</a></h2>";
+      $msg = '<div class="alert--message">
+      <i class="fal fa-times btn--close--message"></i>
+      Đặt phòng thành công. <a href="order.php" class="btn-link">Xem chi tiết</a>
+    </div>';
     }
   }
 }
@@ -31,7 +34,7 @@ include('header.php');
 ?>
 
 <div class="container mt-5" id="primary">
-
+  <?php echo @$msg;  ?>
   <h1 class="text-center">Đặt phòng ngay</h1>
   <form class="form--primary" method="post">
     <div class="row">
@@ -40,14 +43,52 @@ include('header.php');
           <label>Tên: </label>
           <input type="text" class="form-control" value="<?php echo $result['name']; ?>" name="name" placeholder="Họ và Tên" required>
         </div>
+
+        <div class="form-group">
+          <label>Email: </label>
+          <input type="text" class="form-control" value="<?php echo $result['email']; ?>" name="email" placeholder="Email" required>
+        </div>
+
+        <div class="form-group">
+          <label>Số điện thoại: </label>
+          <input type="text" class="form-control" value="<?php echo $result['mobile']; ?>" name="mobile" placeholder="Điện thoại" required>
+        </div>
+
+        <div class="form-group">
+          <label>Địa chỉ: </label>
+          <input type="text" class="form-control" value="<?php echo $result['address']; ?>" name="address" placeholder="Địa chỉ" required>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Thời gian Check In: </label>
+          <input type="date" name="cdate" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+          <label>Thời gian Check In: </label>
+          <input type="time" name="ctime" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+          <label>Số người: </label>
+          <select class="select-control form-control" name="occupancy" id="selectRoomCat" required>
+            <option value="single">Đơn</option>
+            <option value="double">Cặp đôi</option>
+            <option value="three">3 Người</option>
+            <option value="four">4 Người</option>
+          </select>       
+        </div>
+
       </div>
     </div>
+
+    <input type="submit" value="Xác nhận" name="savedata" class="button btn-custom" required />
   </form>
 
-  <div class="container">
+  <!-- <div class="container">
     <div class="row">
-      <?php echo @$msg; ?>
-      <!--Form Containe Start Here-->
       <form class="form-horizontal" method="post">
         <div class="col-sm-6">
           <div class="form-group">
@@ -201,9 +242,9 @@ include('header.php');
         </div>
       </form><br>
     </div>
-  </div>
+  </div> -->
 </div>
-</div>
+
 <?php
 include('footer.php')
 ?>

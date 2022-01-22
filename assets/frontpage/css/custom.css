@@ -111,14 +111,17 @@ a:hover {
 /* Alert Message Box */
 
 .alert--message {
-  padding: 20px;
-  background-color: rgb(97, 166, 179);
-  color: white;
+  padding: 15px 20px;
+  background-color: #f1f1f1;
+  color: #c9a96a;
+  border-top: solid 5px #141414;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
 .btn--close--message {
   margin-left: 15px;
-  color: white;
+  color: #c9a96a;
   font-weight: bold;
   float: right;
   font-size: 22px;
@@ -132,3 +135,19 @@ a:hover {
 }
 
 /* Alert Message Box */
+
+.select-control{
+  border-radius: 0 !important;
+  outline: none !important;
+}
+
+.select-control:focus{
+  outline: none !important;
+}
+
+#map {
+  height: 400px;
+  /* The height is 400 pixels */
+  width: 100%;
+  /* The width is the width of the web page */
+}

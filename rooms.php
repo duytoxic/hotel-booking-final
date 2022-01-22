@@ -1,9 +1,6 @@
 <?php
 include('header.php');
 include('function.php');
-?>
-
-<?php
 include('navigation.php')
 ?>
 

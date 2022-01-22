@@ -1,105 +1,135 @@
 <?php
 include('header.php');
+include('navigation.php');
+include('function.php');
 ?>
 
 <?php
-include('navigation.php')
+$room_id = $_GET['room_id'];
+$sql = mysqli_query($con, "select * from rooms where room_id='$room_id' ");
+$res = mysqli_fetch_assoc($sql);
+
 ?>
-<div class="container-fluid" style="margin-top:2%;">
-  <div class="continer">
-    <div class="row">
-      <div class="col-sm-2"></div>
-      <div class="col-sm-7">
-        <div id="myCarousel" class="carousel slide" data-ride="carousel">
-          <!-- Indicators -->
-          <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-            <li data-target="#myCarousel" data-slide-to="3"></li>
-            <li data-target="#myCarousel" data-slide-to="4"></li>
-            <li data-target="#myCarousel" data-slide-to="5"></li>
-          </ol>
-
-          <!-- Wrapper for slides -->
-          <div class="carousel-inner">
-            <div class="item active">
-              <img src="image/Delux Room Single Bed Ac Room/img1.jpg" class="thumbnail" alt="img1">
-            </div>
-
-            <div class="item">
-              <img src="image/Delux Room Single Bed Ac Room/img2.jpg" class="thumbnail" alt="im2">
-            </div>
-
-            <div class="item">
-              <img src="image/Delux Room Single Bed Ac Room/img3.jpg" class="thumbnail" alt="im3">
-            </div>
-
-            <div class="item">
-              <img src="image/Delux Room Single Bed Ac Room/img4.jpg" class="thumbnail" alt="img4">
-            </div>
-
-            <div class="item">
-              <img src="image/Delux Room Single Bed Ac Room/img5.jpg" class="thumbnail" alt="img5">
-            </div>
-
-            <div class="item">
-              <img src="image/Delux Room Single Bed Ac Room/img7.jpg" class="thumbnail" alt="img7">
-            </div>
-          </div>
-
-          <!-- Left and right controls -->
-          <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="right carousel-control" href="#myCarousel" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right"></span>
-            <span class="sr-only">Next</span>
-          </a>
-        </div>
-        <?php
-        include('connection.php');
-        $room_id = $_GET['room_id'];
-        $sql = mysqli_query($con, "select * from rooms where room_id='$room_id' ");
-        $res = mysqli_fetch_assoc($sql);
-        ?>
-
-        <h2 class="Ac_Room_Text"><?php echo $res['type']; ?></h2>
-        <h3 class="Ac_Room_Text"><?php echo $res['price']; ?></h3>
-        <p class="text-justify">
-          <?php echo $res['details']; ?>
-        </p>
-        <div class="row">
-          <h2>Amenities & Facilities</h2>
-          <img src="image/icon/wifi.png" class="img-responsive">
-          <a href="login.php" class="btn btn-danger">Book Now</a><br><br>
-        </div>
+<section class="intro">
+  <div class="intro__bg-wrap">
+    <div class="overlay intro__bg js-image js-parallax js-scale-down" data-image="uploads/rooms/<?php echo $res['image']; ?>"></div>
+  </div>
+  <div class="container intro__container">
+    <div class="row h-100 align-items-center align-items-center justify-content-center">
+      <div class="col-12 col-xl-8 text-center">
+        <span class="title title--overhead text-white js-lines"><?php echo $res['address'] ?></span>
+        <h1 class="title title--display-1 js-lines"><?php echo $res['name'] ?></h1>
       </div>
-      <div class="col-sm-3">
-        <div class="panel panel-primary">
-          <div class="panel-heading">
-            <h4 align="center">Room Type</h4>
-          </div><br>
-          <div class="panel-body-right text-center">
-            <!--Fatch Mysql Database Select Query Room Details -->
-            <?php
-            include('connection.php');
-            $sql1 = mysqli_query($con, "select * from rooms");
-            while ($result1 = mysqli_fetch_assoc($sql1)) {
+    </div>
+  </div>
+</section>
 
-            ?>
-              <a href="room_details.php?room_id=<?php echo $result1['room_id']; ?>"><?php echo $result1['type']; ?></a>
-              <hr>
-            <?php } ?>
-            <!--Fatch Mysql Database Select Query Room Details -->
-
-          </div>
+<div class="bottom-panel bottom-panelRoom">
+  <div class="bottom-panel__wrap">
+    <div class="row h-100 align-items-center">
+      <div class="col-12 col-md-12 col-xl-8">
+        <div class="row room-details">
+          <div class="col-4 room-details__item slash"><i class="icon-maximize"></i>80 m²</div>
+          <div class="col-4 room-details__item slash"><i class="icon-bed"></i>4 Phòng ngủ</div>
+          <div class="col-4 room-details__item"><i class="icon-bath"></i>2 Phòng tắm</div>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+<section id="content" class="container">
+  <div class="row sticky-parent">
+    <div class="col-md-12 col-xl-8 order-2 order-xl-1 mt-4 mt-sm-5">
+      <h3 class="title title--h3">Mô tả</h3>
+      <p><?php echo $res['details'] ?></p>
+
+      <!-- Amenity -->
+      <h3 class="title title--h3 mt-4 mt-sm-5">Amenity</h3>
+      <div class="row">
+        <ul class="list-unstyled list-feature col-12 col-md-4">
+          <li class="list-feature__item">
+            <img class="icon icon--24" src="assets/icons/icon-parking.svg" alt="" />
+            Free parking
+          </li>
+          <li class="list-feature__item">
+            <img class="icon icon--24" src="assets/icons/icon-wifi.svg" alt="" />
+            Fast Wi-Fi
+          </li>
+          <li class="list-feature__item">
+            <img class="icon icon--24" src="assets/icons/icon-spa.svg" alt="" />
+            SPA Services
+          </li>
+          <li class="list-feature__item">
+            <img class="icon icon--24" src="assets/icons/icon-sport.svg" alt="" />
+            Gym
+          </li>
+        </ul>
+        <ul class="list-unstyled list-feature col-12 col-md-4">
+          <li class="list-feature__item">
+            <img class="icon icon--24" src="assets/icons/icon-elevator.svg" alt="" />
+            Elevator
+          </li>
+          <li class="list-feature__item">
+            <img class="icon icon--24" src="assets/icons/icon-tv.svg" alt="" />
+            Cable TV
+          </li>
+          <li class="list-feature__item">
+            <img class="icon icon--24" src="assets/icons/icon-kitchen.svg" alt="" />
+            Kitchen
+          </li>
+          <li class="list-feature__item">
+            <img class="icon icon--24" src="assets/icons/icon-pool.svg" alt="" />
+            Pool
+          </li>
+        </ul>
+        <ul class="list-unstyled list-feature col-12 col-md-4">
+          <li class="list-feature__item">
+            <img class="icon icon--24" src="assets/icons/icon-coffee-maker.svg" alt="" />
+            Coffee maker
+          </li>
+          <li class="list-feature__item">
+            <img class="icon icon--24" src="assets/icons/icon-conditioner.svg" alt="" />
+            Conditioning
+          </li>
+          <li class="list-feature__item">
+            <img class="icon icon--24" src="assets/icons/icon-hair-dryer.svg" alt="" />
+            Hair dryer
+          </li>
+          <li class="list-feature__item">
+            <img class="icon icon--24" src="assets/icons/icon-washer.svg" alt="" />
+            Washer
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Sidebar Booking -->
+    <div class="col-md-12 col-xl-4 order-1 order-xl-2">
+      <div class="sidebar-booking sticky-column">
+        <div class="sidebar-booking__priceWrap">
+          <div class="priceWrap-title">Giá phòng</div>
+          <div class="priceWrap-price"><?php echo currency_format($res['price']); ?><span> đêm</span></div>
+        </div>
+
+        <div class="text-center mt-5">
+          <?php
+          if ($_SESSION['create_account_logged_in'] != "") {
+          ?>
+            <a href="bookingForm.php?room_id=<?php echo $res['room_id']; ?>" class="button btn-custom">Đặt phòng ngay</a>
+          <?php } else {
+          ?>
+            <a href="login.php" class="button btn-custom">Đặt phòng ngay</a>
+          <?php
+          } ?>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
 <?php
 include('footer.php')
 ?>

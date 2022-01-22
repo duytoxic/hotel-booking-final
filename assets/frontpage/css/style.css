@@ -3376,7 +3376,7 @@ input:required:invalid {
 }
 .itemRoom__img-wrap {
   border-radius: 6px;
-  height: 370px;
+  height: 100%;
   margin-bottom: 0;
   overflow: hidden;
   position: relative;
@@ -3401,7 +3401,7 @@ input:required:invalid {
 }
 @media only screen and (max-width: 1200px) {
   .itemRoom__img-wrap {
-    height: 290px;
+    height: 320px;
   }
 }
 @media only screen and (max-width: 992px) {
@@ -3460,6 +3460,7 @@ input:required:invalid {
   }
 }
 .itemRoom .title {
+  font-size: 1.2rem;
   margin-bottom: .9rem;
 }
 @media only screen and (max-width: 1200px) {
@@ -3488,7 +3489,7 @@ input:required:invalid {
   }
 }
 .itemRoom__price {
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   font-weight: 600;
   line-height: 1;
 }
