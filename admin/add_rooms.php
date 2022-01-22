@@ -1,7 +1,7 @@
 <?php
 if (isset($add)) { {
     $img = $_FILES['img']['name'];
-    mysqli_query($con, "insert into rooms values('','$rno','$room_cat','$price','$address','$details','$img')");
+    mysqli_query($con, "insert into rooms values('','$rno','$room_cat','$price','$address','$details','$img', '1')");
     move_uploaded_file($_FILES['img']['tmp_name'], "../uploads/rooms/" . $_FILES['img']['name']);
     echo "Rooms added successfully";
   }
@@ -36,7 +36,7 @@ if (isset($add)) { {
 
     <tr>
       <th>Price</th>
-      <td><input type="text" name="price" class="form-control" required />
+        <td><input type="text" name="price" class="form-control" required />
       </td>
     </tr>
 
@@ -57,6 +57,8 @@ if (isset($add)) { {
       <td><input type="file" name="img" class="form-control" required />
       </td>
     </tr>
+
+
 
     <tr>
       <td colspan="2">

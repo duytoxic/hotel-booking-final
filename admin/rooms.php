@@ -29,17 +29,17 @@ while($res=mysqli_fetch_assoc($sql))
 {
 $id=$res['room_id'];	
 $img=$res['image'];
-$path="../image/rooms/$img";
+$path="../uploads/rooms/$img";
 ?>
 <tr>
 		<td><?php echo $i;$i++; ?></td>
 		<td><img src="<?php echo $path;?>" width="50" height="50"/></td>
-		<td><?php echo $res['room_no']; ?></td>
-		<td><?php echo $res['type']; ?></td>
+		<td><?php echo $res['room_number']; ?></td>
+		<td><?php echo $res['room_cat']; ?></td>
 		<td><?php echo $res['price']; ?></td>
 		<td><?php echo $res['details']; ?></td>
 
-		<td><a href="dashboard.php?option=update_room&id=<?php echo $id; ?>"><span class="glyphicon glyphicon-pencil"></span></a></td>
+		<td><a href="dashboard.php?option=update_room&id=<?php echo $id; ?>">Sua</a></td>
 
 		
 		<td><a href="#" onclick="delRoom('<?php echo $id; ?>')"><span class="glyphicon glyphicon-remove" style='color:red'></span></a></td>

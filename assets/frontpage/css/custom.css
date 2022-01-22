@@ -145,9 +145,98 @@ a:hover {
   outline: none !important;
 }
 
-#map {
-  height: 400px;
-  /* The height is 400 pixels */
+.room-item {
+  -webkit-transition: .3s all ease-out;
+  transition: .3s all ease-out;
+  margin-bottom: 30px;
+  border: solid 1px #eee;
+}
+
+.room-item .image-wrapper{
+  overflow: hidden;
+  background-color: black;
+}
+
+.room-item img{
   width: 100%;
-  /* The width is the width of the web page */
+  object-fit: cover;
+  height: 200px;
+  cursor: pointer;
+  transition: 0.4s;
+  opacity: 0.9;
+}
+
+.room-item img:hover{
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+
+}
+
+.room-item h3 {
+  font-size: 26px;
+  line-height: 24px;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.room-item p {
+  color: #7a7a7a;
+}
+
+.room-item p strong {
+  color: #000000;
+  font-weight: 400;
+}
+
+.room-item p:last-child {
+  margin-bottom: 0;
+}
+
+.room-item .text {
+  padding: 20px;
+  border-top: none;
+}
+
+.room-item.fade {
+  opacity: .4;
+}
+
+.room-navigation{
+  border: solid 1px #c9a96a;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.room-navigation h4{
+  font-size: 18px;
+  border-bottom: solid 1px #c9a96a;
+}
+
+.room-navigation ul {
+margin-top: 10px;
+}
+
+.room-navigation ul li{
+  margin: 8px 0;
+  border-bottom-style: dotted solid double;
+  border-bottom-color: #c9a96a;
+  /* border-bottom: solid 1px #c9a96a; */
+}
+
+.room-navigation ul li a{
+  color: #141414;
+  transition: 0.3s;
+  font-size: 18px;
+}
+
+.room-navigation ul li.active a{
+  color:#c9a96a ;
+}
+
+.room-navigation ul li:hover{
+  cursor: pointer;
+}
+
+.room-navigation ul li:hover a{
+  color:#c9a96a ;
 }

@@ -50,10 +50,3 @@ function getLatLong()
     return false;
   }
 }
-
-$registration = $_POST['registration'];
-
-if ($registration == "success"){
-  // some action goes here under php
-  echo json_encode(getLatLong());
-} 

@@ -3,7 +3,9 @@ include('connection.php');
 include('function.php');
 
 include('header.php');
-include('navigation.php')
+include('navigation.php');
+
+$catid = $_GET['catid'];
 ?>
 
 <div class="container-fluid my-5">
@@ -15,7 +17,9 @@ include('navigation.php')
         <?php
           $sql = mysqli_query($con, "SELECT * FROM  room_categories");
           while ($res = mysqli_fetch_assoc($sql)){ ?>
-            <li><a href="room_categories.php?catid=<?php echo $res['id']; ?>"><?php echo $res['name']; ?></a></li>
+            <li class="<?php if($res['id'] == $catid){echo 'active';} ?>">
+              <a href="room_categories.php?catid=<?php echo $res['id']; ?>"><?php echo $res['name']; ?></a>
+            </li>
         <?php } ?>
         </ul>
       </div>
@@ -23,11 +27,11 @@ include('navigation.php')
     <div class="col-lg-9">
       <div class="row">
         <?php
-        $sql = mysqli_query($con, "SELECT * FROM `rooms`");
+        $sql = mysqli_query($con, "SELECT * FROM rooms as r inner join room_categories as rc on $catid = r.room_cat");
         while ($res = mysqli_fetch_assoc($sql)){ ?>
         <div class="col-md-4 col-sm-6 col-xs-12">
           <div class="room-item">
-          <div class="image-wrapper"><img src="uploads/rooms/<?php echo $res['image']; ?>" alt="photo" class="img-responsive"></div>
+            <div class="image-wrapper"><img src="uploads/rooms/<?php echo $res['image']; ?>" alt="photo" class="img-responsive"></div>
             <div class="text">
               <h3><?php echo $res['name']; ?></h3>
               <p>Giá <strong><?php echo $res['price']; ?> / đêm</strong></p>
@@ -37,12 +41,15 @@ include('navigation.php')
                   <li><i class="icon-user2"></i> 2 người</li>
                 </ul>
               </div>
-              <a href="room_details.php?room_id=<?php echo $res['room_id']; ?>" class="button button--active" disabled>Xem chi tiết</a>
+              <a href="room_details.php?room_id=<?php echo $res['room_id']; ?>" class="button button--active">Xem chi tiết</a>
+
             </div>
           </div>
         </div>
       
-        <?php } ?>
+        <?php }
+        
+        ?>
         </div>
       </div>
     </div>

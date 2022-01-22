@@ -20,13 +20,6 @@ include('connection.php');
               <p>Free: <a href="tel:+12 365 5233">+12 365 5233</a></p>
             </div>
           </div>
-          <div class="media header-top-info">
-            <span class="header-top-info__icon"><i class="ti-email"></i></span>
-            <div class="media-body">
-              <p>Have any question?</p>
-              <p>Free: <a href="tel:+12 365 5233">+12 365 5233</a></p>
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -44,17 +37,7 @@ include('connection.php');
         <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
           <ul class="nav navbar-nav menu_nav">
             <li class="nav-item active"><a class="nav-link" href="index.php">Trang chủ</a></li>
-            <li class="nav-item submenu dropdown">
-              <a href="rooms.php" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Phòng</a>
-              <ul class="dropdown-menu">
-              <?php
-                $sql = mysqli_query($con, "select * from room_categories");
-                while ($result = mysqli_fetch_assoc($sql)){
-                  echo '<li class="nav-item"><a class="nav-link" href="rooms.php">'. $result['name'] .'</a></li>';
-                } 
-              ?>
-              </ul>
-            </li>
+            <li class="nav-item"><a class="nav-link" href="rooms.php">Phòng</a></li>
             <li class="nav-item"><a class="nav-link" href="about.php">Giới thiệu</a></li>
             <li class="nav-item"><a class="nav-link" href="image gallery.php">Liên hệ</a></li>
           </ul>
