@@ -59,7 +59,7 @@ include('connection.php');
             </li>
           <?php } else {
           ?>
-            <li><a href="login.php" title="login" class="button button-outline"><span class="glyphicon glyphicon-log-in"></span>&nbsp;&nbsp;User Login</a>
+            <li><a href="login.php" title="login" class="button button-outline">Đăng nhập</a>
             </li>
           <?php
           } ?>

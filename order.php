@@ -44,7 +44,7 @@ include('navigation.php');
             <a href="order_detail.php?order_id=<?php echo $oid; ?>" class="text-link">Xem chi tiết</a>
           </td>
           <td>
-            <a href="cancel_order.php?order_id=<?php echo $oid ?>" class="btn btn-danger btn-sm">Hủy</a>
+            <a href="cancel_order.php?order_id=<?php echo $oid ?>&room_id=<?php echo $result['room_id'] ?>" class="btn btn-danger btn-sm">Hủy</a>
           </td>
         </tr>
 

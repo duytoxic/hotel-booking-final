@@ -24,6 +24,8 @@ if (isset($savedata)) {
       <i class="fal fa-times btn--close--message"></i>
       Đặt phòng thành công. <a href="order.php" class="btn-link">Xem chi tiết</a>
     </div>';
+    $sql_update_status = "update rooms set status = 2 where room_id = $room_id";
+    mysqli_query($con, $sql_update_status);
     }
   }
 }
