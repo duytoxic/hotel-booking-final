@@ -127,7 +127,7 @@ if($admin=="")
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="dashboard.php?option=admin_profile"
                                 aria-expanded="false">
                                 <i class="fas fa-address-card" aria-hidden="true"></i>
-                                <span class="hide-menu">Hồ sơ</span>
+                                <span class="hide-menu">Hồ sơ quản trị viên</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
