@@ -5,6 +5,7 @@
 		<th>Thứ tự</th>
 		<th>Địa chỉ</th>
 		<th>Email</th>
+		<th>Điện thoại</th>
 		<th>Ngày đăng ký</th>
 		<th>Thời gian nhận phòng</th>
 		<th>Thời gian trả phòng</th>
@@ -24,6 +25,7 @@ $oid=$res['id'];
 		<td><?php echo $i;$i++; ?></td>
 		<td><?php echo $res['address']; ?></td>
 		<td><?php echo $res['email']; ?></td>
+		<td><?php echo $res['phone']; ?></td>
 		<td><?php echo $res['check_in_time'] . $res['check_in_date']; ?></td>
 		<td><?php echo $res['check_in_time']; ?></td>
 		<td><?php echo $res['check_out_date']; ?></td>

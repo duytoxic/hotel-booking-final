@@ -16,7 +16,13 @@ if (isset($update)) {
 
 		<tr>
 			<th>Số phòng</th>
-			<td><input type="text" name="rno" value="<?php echo $res['room_no']; ?>" class="form-control" />
+			<td><input type="text" name="rno" value="<?php echo $res['room_number']; ?>" class="form-control" />
+			</td>
+		</tr>
+
+		<tr>
+			<th>Địa chỉ</th>
+			<td><input type="text" name="rno" value="<?php echo $res['address']; ?>" class="form-control" />
 			</td>
 		</tr>
 

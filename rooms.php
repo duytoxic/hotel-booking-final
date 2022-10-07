@@ -39,7 +39,7 @@ include('navigation.php')
                 <p>Giá <strong><?php echo currency_format($res['price']); ?> / đêm</strong></p>
                 <div class="post-meta mb30">
                   <ul>
-                    <li><span class="review-rate">4.7</span> <i class="icon-star"></i> 252 Reviews</li>
+                    <li><span class="review-rate">132 đánh giá</li>
                     <li><i class="icon-user2"></i> 2 người</li>
                   </ul>
                 </div>

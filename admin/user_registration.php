@@ -4,7 +4,6 @@
 		<th>Thứ tự</th>
 		<th>Tên</th>
 		<th>Email</th>
-		<th>Mật khẩu</th>
 		<th>Điện thoại</th>
 		<th>Địa chỉ</th>
 		<th>Giới tính</th>
@@ -19,7 +18,6 @@ while($res=mysqli_fetch_assoc($sql))
 		<td><?php echo $i;$i++; ?></td>
 		<td><?php echo $res['name']; ?></td>
 		<td><?php echo $res['email']; ?></td>
-		<td><?php echo $res['password']; ?></td>
 		<td><?php echo $res['mobile']; ?></td>
 		<td><?php echo $res['address']; ?></td>
 	</td>

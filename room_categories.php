@@ -8,6 +8,16 @@ include('navigation.php');
 $catid = $_GET['catid'];
 ?>
 
+<div class="breadcrumb-custom d-flex">
+  <div class="container">
+    <?php
+      $sql_get_cat = mysqli_query($con, "select name from room_categories where id = $catid");
+      $res = mysqli_fetch_assoc($sql_get_cat);
+    ?>
+  <p>Trang chủ / <?php echo $res['name']; ?></p>
+  </div>
+</div>
+
 <div class="container-fluid my-5">
   <div class="row">
     <div class="col-lg-3">
